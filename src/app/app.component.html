@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand mr-auto" href="#">Polls</a>
-    <button type="button" class="btn btn-secondary">Create Poll</button>
+    <button type="button" class="btn btn-secondary" (click)="showForm = !showForm">Create Poll</button>
 </nav>
 
 
@@ -10,7 +10,7 @@
         Powerd By LordVins226
     </p>
 </section>
-<app-poll-create></app-poll-create>
+<app-poll-create *ngIf="showForm"></app-poll-create>
 <div class="d-flex">
     <div class="container poll-list">
         List
