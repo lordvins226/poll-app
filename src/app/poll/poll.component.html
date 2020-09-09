@@ -1,15 +1,14 @@
-<p>poll works!</p>
 <div class="card mb-4">
     <div class="poll-image">
-        <img src="https://images.pexels.com/photos/593319/pexels-photo-593319.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+        <img [src]="pollImage">
     </div>
     <div class="card-body">
         <p class="card-text text-truncate font-weight-bold">
-            Do you like Iphone ?
+            {{question}}
         </p>
         <div class="d-flex justify-content-between">
-            <small class="text-muted">26 votes</small>
-            <small class="text-muted">voted</small>
+            <small class="text-muted">Votes: {{numberOfVotes}}</small>
+            <small *ngIf="voted" class="badge badge-success">voted</small>
         </div>
     </div>
 </div>
