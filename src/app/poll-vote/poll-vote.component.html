@@ -1,1 +1,9 @@
-<p>poll-vote works!</p>
+<h3>Poll Questions</h3>
+
+<form [formGroup]="voteForm" (click)="submitForm(voteForm.value)">
+    <div class="form-check" *ngFor="let opt of options">
+        <input type="radio" class="form-check-input" formControlName="selected">
+        <label class="fomr-check-label">{{ opt }}</label>
+    </div>
+    <button type="submit" class="btn btn-success mt-3" [disabled]="!voteForm.valid"> Submit Vote </button>
+</form>

@@ -16,6 +16,6 @@
         <app-poll *ngFor="let poll of polls" [question]="poll.question" [pollImage]="poll.image" [votes]="poll.votes" [voted]="poll.voted"></app-poll>
     </div>
     <div class="container poll-detail">
-        Detail
+        <app-poll-vote></app-poll-vote>
     </div>
 </div>
