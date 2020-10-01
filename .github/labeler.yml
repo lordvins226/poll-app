@@ -1,22 +1,15 @@
-name: labeler
-
+name: "Issue Labeler"
 on:
   issues:
-    types: [opened]
-  
+    types: [opened, edited]
+
 jobs:
-  apply-label:
+  triage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.addLabels({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                labels: ['Hacktoberfest']
-              })
-
-
+    - uses: github/issue-labeler@v2.0
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: .github/labeler.yml
+        not-before: 2020-01-15T02:54:32Z
+        enable-versioned-regex: 0
