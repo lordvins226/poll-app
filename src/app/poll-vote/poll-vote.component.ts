@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import ApexCharts from 'apexcharts';
 
 @Component({
   selector: 'app-poll-vote',
