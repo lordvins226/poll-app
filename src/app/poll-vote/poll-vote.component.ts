@@ -7,7 +7,8 @@ import ApexCharts from 'apexcharts';
   templateUrl: './poll-vote.component.html',
   styleUrls: ['./poll-vote.component.scss']
 })
-export class PollVoteComponent{
+export class PollVoteComponent implements OnInit{
+  
   options: ['Monday','Tuesday','Wednesday'];
   voteForm: FormGroup;
 
@@ -16,9 +17,12 @@ export class PollVoteComponent{
       selected: this.fb.control('',[Validators.required]),
     });
    }
+  ngOnInit(): void {
+    
+  }
 
-   submitForm(data){
-    console.log("formData:" , data);
+   submitForm(){
+    console.log(this.voteForm.value);
   }
 
 }
